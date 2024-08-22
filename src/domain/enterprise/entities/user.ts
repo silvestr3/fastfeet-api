@@ -1,7 +1,7 @@
 import { Entity } from 'src/core/entities/entity';
 import { UniqueEntityId } from '../../../core/entities/unique-entity-id';
 
-interface UserProps {
+export interface UserProps {
   name: string;
   cpf: string;
   password: string;
