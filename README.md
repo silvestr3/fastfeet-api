@@ -10,7 +10,7 @@
 ## Use cases
 
 - [x] Authenticate with CPF and password
-- [ ] CRUD Delivery person
+- [x] CRUD Delivery person
 - [ ] CRUD Order
 - [ ] CRUD Recipient
 - [ ] Mark order as "pending" (available for pickup)
@@ -18,14 +18,14 @@
 - [ ] Mark order as delivered
 - [ ] Mark order as returned
 - [ ] List orders with addresses near the delivery person
-- [ ] Change user's password
+- [x] Change user's password
 - [ ] List user's deliveries
 - [ ] Notify recipient on order status change
 
 ## Business rules
 
 - [ ] Only admin users can make CRUD operations on orders
-- [ ] Only admin users can make CRUD operations on delivery people
+- [x] Only admin users can make CRUD operations on delivery people
 - [ ] Only admin users can make CRUD operations on recipients
 - [ ] To mark order as delivered, is mandatory to have a picture
 - [ ] Only the delivery person that picked up the order can mark it as delivered
