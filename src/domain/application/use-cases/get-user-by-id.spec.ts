@@ -2,6 +2,7 @@ import { FakeUsersRepository } from 'test/repositories/fake-users-repository';
 import { CreateDeliveryUserUseCase } from './create-delivery-user';
 import { GetUserByIdUseCase } from './get-user-by-id';
 import { MakeUser } from 'test/factories/fake-users-factory';
+import { ResourceNotFoundError } from './errors/resource-not-found-error';
 
 let usersRepository: FakeUsersRepository;
 let sut: GetUserByIdUseCase;
@@ -25,11 +26,11 @@ describe('Get user by id use case tests', () => {
     expect(result.user).toEqual(user);
   });
 
-  it('Should return null when user does not exist', async () => {
-    const result = await sut.execute({
-      id: '123',
-    });
-
-    expect(result.user).toBeNull();
+  it('Should throw when user is not found', async () => {
+    await expect(
+      sut.execute({
+        id: '123',
+      }),
+    ).rejects.toBeInstanceOf(ResourceNotFoundError);
   });
 });
