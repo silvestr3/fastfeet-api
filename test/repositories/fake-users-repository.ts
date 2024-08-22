@@ -11,12 +11,12 @@ export class FakeUsersRepository implements UsersRepository {
   async findById(id: string): Promise<User | null> {
     const user = this.users.find((user) => user.id.toString() === id);
 
-    return user;
+    return user ?? null;
   }
 
   async findByCPF(cpf: string): Promise<User | null> {
     const user = this.users.find((user) => user.cpf === cpf);
 
-    return user;
+    return user ?? null;
   }
 }
