@@ -2,10 +2,10 @@
 
 ## Entities
 
-- [ ] Admin
-- [ ] Delivery person
-- [ ] Recipient
-- [ ] Order
+- [x] Admin
+- [x] Delivery person
+- [x] Recipient
+- [x] Order
 
 ## Use cases
 
