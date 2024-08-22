@@ -9,7 +9,7 @@
 
 ## Use cases
 
-- [ ] Authenticate with CPF and password
+- [x] Authenticate with CPF and password
 - [ ] CRUD Delivery person
 - [ ] CRUD Order
 - [ ] CRUD Recipient

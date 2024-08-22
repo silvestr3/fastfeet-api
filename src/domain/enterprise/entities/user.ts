@@ -29,6 +29,10 @@ export class User extends Entity<UserProps> {
     return this.props.role;
   }
 
+  get password() {
+    return this.props.password;
+  }
+
   static create(props: UserProps, id?: UniqueEntityId) {
     return new User(props, id);
   }
