@@ -8,6 +8,12 @@ export class FakeUsersRepository implements UsersRepository {
     this.users.push(user);
   }
 
+  async save(user: User): Promise<void> {
+    const userIndex = this.users.findIndex((u) => u.id === user.id);
+
+    this.users[userIndex] = user;
+  }
+
   async findById(id: string): Promise<User | null> {
     const user = this.users.find((user) => user.id.toString() === id);
 
