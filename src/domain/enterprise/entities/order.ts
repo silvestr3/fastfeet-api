@@ -6,7 +6,7 @@ interface OrderProps {
   deliveryPersonId?: UniqueEntityId | null;
   description: string;
   status: 'WAITING' | 'PICKUP' | 'DELIVERED';
-  createdAt: Date;
+  createdAt?: Date;
   updatedAt?: Date | null;
   deliveryProof?: string | null;
 }
