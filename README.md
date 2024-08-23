@@ -16,7 +16,7 @@
 - [x] Mark order as "pending" (available for pickup)
 - [x] Pickup order
 - [ ] Mark order as delivered
-- [ ] Mark order as returned
+- [x] Mark order as returned
 - [ ] List orders with addresses near the delivery person
 - [x] Change user's password
 - [x] List user's deliveries
