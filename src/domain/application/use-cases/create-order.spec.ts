@@ -1,7 +1,6 @@
 import { FakeUsersRepository } from 'test/repositories/fake-users-repository';
 import { MakeUser } from 'test/factories/fake-users-factory';
 import { UnauthorizedError } from './errors/unauthorized-error';
-import { UserAlreadyExistsError } from './errors/user-already-exists-error';
 import { CreateOrderUseCase } from './create-order';
 import { FakeOrdersRepository } from 'test/repositories/fake-orders-repository';
 import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
