@@ -19,7 +19,7 @@
 - [ ] Mark order as returned
 - [ ] List orders with addresses near the delivery person
 - [x] Change user's password
-- [ ] List user's deliveries
+- [x] List user's deliveries
 - [ ] Notify recipient on order status change
 
 ## Business rules
@@ -30,4 +30,4 @@
 - [ ] To mark order as delivered, is mandatory to have a picture
 - [ ] Only the delivery person that picked up the order can mark it as delivered
 - [x] Only the admin user can change a user's password
-- [ ] A delivery person can only list their own deliveries
+- [x] A delivery person can only list their own deliveries

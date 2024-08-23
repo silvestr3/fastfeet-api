@@ -25,4 +25,13 @@ export class FakeOrdersRepository implements OrdersRepository {
 
     return order ?? null;
   }
+
+  async fetchByUserId(userId: string): Promise<Order[]> {
+    const orders = this.orders.filter((order) => {
+      if (order.deliveryPersonId)
+        return order.deliveryPersonId.toString() === userId;
+    });
+
+    return orders;
+  }
 }

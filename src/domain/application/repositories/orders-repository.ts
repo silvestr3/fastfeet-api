@@ -5,4 +5,5 @@ export abstract class OrdersRepository {
   abstract save(order: Order): Promise<void>;
   abstract delete(order: Order): Promise<void>;
   abstract findById(id: string): Promise<Order | null>;
+  abstract fetchByUserId(userId: string): Promise<Order[]>;
 }
