@@ -1,5 +1,4 @@
 import { FakeUsersRepository } from 'test/repositories/fake-users-repository';
-import { CreateDeliveryUserUseCase } from './create-delivery-user';
 import { GetUserByIdUseCase } from './get-user-by-id';
 import { MakeUser } from 'test/factories/fake-users-factory';
 import { ResourceNotFoundError } from './errors/resource-not-found-error';
