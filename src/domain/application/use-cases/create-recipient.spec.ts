@@ -3,7 +3,6 @@ import { MakeUser } from 'test/factories/fake-users-factory';
 import { UnauthorizedError } from './errors/unauthorized-error';
 import { CreateRecipientUseCase } from './create-recipient';
 import { FakeRecipientsRepository } from 'test/repositories/fake-recipients-repository';
-import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
 
 let usersRepository: FakeUsersRepository;
 let recipientsRepository: FakeRecipientsRepository;

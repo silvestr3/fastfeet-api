@@ -9,7 +9,7 @@ let usersRepository: FakeUsersRepository;
 let ordersRepository: FakeOrdersRepository;
 let sut: EditOrderUseCase;
 
-describe('Create delivery user use case tests', () => {
+describe('Edit order use case tests', () => {
   beforeEach(() => {
     usersRepository = new FakeUsersRepository();
     ordersRepository = new FakeOrdersRepository();
@@ -36,7 +36,7 @@ describe('Create delivery user use case tests', () => {
     expect(ordersRepository.orders[0].description).toEqual('New description');
   });
 
-  it("Should not be able to change user's password with non-user account", async () => {
+  it('Should not be able to edit an order with non-user account', async () => {
     const user = MakeUser();
     usersRepository.users.push(user);
 

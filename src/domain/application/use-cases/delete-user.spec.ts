@@ -8,7 +8,7 @@ let usersRepository: FakeUsersRepository;
 let hasher: FakeHasher;
 let sut: DeleteUserUseCase;
 
-describe('Create delivery user use case tests', () => {
+describe('Delete user use case tests', () => {
   beforeEach(() => {
     usersRepository = new FakeUsersRepository();
     hasher = new FakeHasher();

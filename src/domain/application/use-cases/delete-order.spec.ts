@@ -11,7 +11,7 @@ let usersRepository: FakeUsersRepository;
 let ordersRepository: FakeOrdersRepository;
 let sut: DeleteOrderUseCase;
 
-describe('Create delivery user use case tests', () => {
+describe('Delete order use case tests', () => {
   beforeEach(() => {
     usersRepository = new FakeUsersRepository();
     ordersRepository = new FakeOrdersRepository();
@@ -36,7 +36,7 @@ describe('Create delivery user use case tests', () => {
     expect(ordersRepository.orders[0]).toBeUndefined();
   });
 
-  it('Should not be able to delete a user with non-admin user', async () => {
+  it('Should not be able to delete an order with non-admin user', async () => {
     const user1 = MakeUser();
     const order = MakeOrder();
 
