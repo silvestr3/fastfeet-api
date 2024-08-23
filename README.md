@@ -11,7 +11,7 @@
 
 - [x] Authenticate with CPF and password
 - [x] CRUD Delivery person
-- [ ] CRUD Order
+- [x] CRUD Order
 - [ ] CRUD Recipient
 - [ ] Mark order as "pending" (available for pickup)
 - [ ] Pickup order
@@ -24,10 +24,10 @@
 
 ## Business rules
 
-- [ ] Only admin users can make CRUD operations on orders
+- [x] Only admin users can make CRUD operations on orders
 - [x] Only admin users can make CRUD operations on delivery people
 - [ ] Only admin users can make CRUD operations on recipients
 - [ ] To mark order as delivered, is mandatory to have a picture
 - [ ] Only the delivery person that picked up the order can mark it as delivered
-- [ ] Only the admin user can change a user's password
+- [x] Only the admin user can change a user's password
 - [ ] A delivery person can only list their own deliveries
