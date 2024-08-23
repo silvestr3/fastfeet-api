@@ -5,7 +5,7 @@ export interface OrderProps {
   recipientId: UniqueEntityId;
   deliveryPersonId?: UniqueEntityId | null;
   description: string;
-  status: 'WAITING' | 'PICKUP' | 'DELIVERED';
+  status: 'NEW' | 'PENDING' | 'PICKUP' | 'DELIVERED';
   createdAt?: Date;
   updatedAt?: Date | null;
   deliveryProof?: string | null;
@@ -40,7 +40,7 @@ export class Order extends Entity<OrderProps> {
     this.props.description = description;
   }
 
-  set status(status: 'WAITING' | 'PICKUP' | 'DELIVERED') {
+  set status(status: 'NEW' | 'PENDING' | 'PICKUP' | 'DELIVERED') {
     this.props.status = status;
     this.update();
   }

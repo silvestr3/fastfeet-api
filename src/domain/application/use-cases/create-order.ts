@@ -30,7 +30,7 @@ export class CreateOrderUseCase {
     const newOrder = Order.create({
       recipientId: new UniqueEntityId(recipientId),
       description,
-      status: 'WAITING',
+      status: 'NEW',
     });
 
     await this.ordersRepository.create(newOrder);

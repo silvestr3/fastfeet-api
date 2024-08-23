@@ -9,7 +9,7 @@ export function MakeOrder(
   const order = Order.create(
     {
       description: faker.lorem.sentence(10),
-      status: 'WAITING',
+      status: 'NEW',
       recipientId: new UniqueEntityId(),
       ...override,
     },

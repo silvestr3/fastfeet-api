@@ -34,7 +34,7 @@ describe('Create order use case tests', () => {
       expect.objectContaining({
         description: 'Test order',
         recipientId: new UniqueEntityId('recipient-01'),
-        status: 'WAITING',
+        status: 'NEW',
       }),
     );
   });
