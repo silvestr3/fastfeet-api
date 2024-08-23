@@ -13,7 +13,7 @@
 - [x] CRUD Delivery person
 - [x] CRUD Order
 - [x] CRUD Recipient
-- [ ] Mark order as "pending" (available for pickup)
+- [x] Mark order as "pending" (available for pickup)
 - [ ] Pickup order
 - [ ] Mark order as delivered
 - [ ] Mark order as returned
