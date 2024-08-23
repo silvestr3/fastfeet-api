@@ -14,7 +14,7 @@
 - [x] CRUD Order
 - [x] CRUD Recipient
 - [x] Mark order as "pending" (available for pickup)
-- [ ] Pickup order
+- [x] Pickup order
 - [ ] Mark order as delivered
 - [ ] Mark order as returned
 - [ ] List orders with addresses near the delivery person

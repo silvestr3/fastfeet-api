@@ -36,22 +36,25 @@ export class Order extends Entity<OrderProps> {
     return this.props.deliveryProof;
   }
 
+  get deliveryPersonId() {
+    return this.props.deliveryPersonId;
+  }
+
   set description(description: string) {
     this.props.description = description;
   }
 
+  set deliveryPersonId(deliveryPersonId: UniqueEntityId) {
+    this.props.deliveryPersonId = deliveryPersonId;
+  }
+
   set status(status: 'NEW' | 'PENDING' | 'PICKUP' | 'DELIVERED') {
     this.props.status = status;
-    this.update();
+    this.props.updatedAt = new Date();
   }
 
   set deliveryProof(deliveryProof: string) {
     this.props.deliveryProof = deliveryProof;
-    this.update();
-  }
-
-  private update() {
-    this.props.updatedAt = new Date();
   }
 
   static create(props: OrderProps, id?: UniqueEntityId) {
