@@ -28,8 +28,8 @@ export class AuthenticateUserController {
       return {
         auth_token: token,
       };
-    } catch {
-      throw new UnauthorizedException('Invalid credentials');
+    } catch (err) {
+      throw new UnauthorizedException(err.message);
     }
   }
 }
