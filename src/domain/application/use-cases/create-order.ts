@@ -3,6 +3,8 @@ import { OrdersRepository } from '../repositories/orders-repository';
 import { UsersRepository } from '../repositories/users-repository';
 import { UnauthorizedError } from './errors/unauthorized-error';
 import { UniqueEntityId } from '@/core/entities/unique-entity-id';
+import { RecipientsRepository } from '../repositories/recipients-repository';
+import { ResourceNotFoundError } from './errors/resource-not-found-error';
 
 interface CreateOrderUseCaseParams {
   executorId: string;
@@ -14,6 +16,7 @@ export class CreateOrderUseCase {
   constructor(
     private usersRepository: UsersRepository,
     private ordersRepository: OrdersRepository,
+    private recipientsRepository: RecipientsRepository,
   ) {}
 
   async execute({
@@ -25,6 +28,12 @@ export class CreateOrderUseCase {
 
     if (!executorUser || executorUser.role !== 'ADMIN') {
       throw new UnauthorizedError();
+    }
+
+    const recipient = await this.recipientsRepository.findById(recipientId);
+
+    if (!recipient) {
+      throw new ResourceNotFoundError();
     }
 
     const newOrder = Order.create({

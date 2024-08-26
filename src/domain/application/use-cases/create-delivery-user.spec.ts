@@ -25,7 +25,7 @@ describe('Create delivery user use case tests', () => {
     usersRepository.users.push(adminUser);
 
     await sut.execute({
-      userId: adminUser.id,
+      executorId: adminUser.id.toString(),
       name: 'John Doe',
       cpf: '123123123',
       password: 'testpass',
@@ -45,7 +45,7 @@ describe('Create delivery user use case tests', () => {
 
     await expect(
       sut.execute({
-        userId: nonAdminUser.id,
+        executorId: nonAdminUser.id.toString(),
         name: 'John Doe',
         cpf: '123123123',
         password: 'testpass',
@@ -63,7 +63,7 @@ describe('Create delivery user use case tests', () => {
 
     await expect(
       sut.execute({
-        userId: adminUser.id,
+        executorId: adminUser.id.toString(),
         name: 'John Doe',
         cpf: '123123123',
         password: 'testpass',
