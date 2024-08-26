@@ -7,11 +7,13 @@ import { Test } from '@nestjs/testing';
 import { describe } from 'node:test';
 import { UserFactory } from 'test/factories/fake-users-factory';
 import request from 'supertest';
+import { PrismaService } from '@/infra/database/prisma.service';
 
 describe('Create delivery user e2e test', () => {
   let app: INestApplication;
   let userFactory: UserFactory;
   let jwt: JwtService;
+  let prisma: PrismaService;
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
@@ -22,6 +24,7 @@ describe('Create delivery user e2e test', () => {
     app = moduleRef.createNestApplication();
     userFactory = moduleRef.get(UserFactory);
     jwt = moduleRef.get(JwtService);
+    prisma = moduleRef.get(PrismaService);
 
     await app.init();
   });
@@ -45,5 +48,13 @@ describe('Create delivery user e2e test', () => {
       });
 
     expect(response.statusCode).toEqual(201);
+
+    const userOnDatabase = prisma.user.findUnique({
+      where: {
+        cpf: '12312312312',
+      },
+    });
+
+    expect(userOnDatabase).toBeTruthy();
   });
 });
