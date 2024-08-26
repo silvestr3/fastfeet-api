@@ -54,7 +54,7 @@ export class CreateDeliveryUserController {
         throw new UnauthorizedException(error.message);
       }
 
-      throw new BadRequestException(error.message);
+      throw new BadRequestException();
     }
   }
 }
