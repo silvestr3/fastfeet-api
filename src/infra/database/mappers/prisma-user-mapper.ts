@@ -14,4 +14,14 @@ export class PrismaUserMapper {
       new UniqueEntityId(user.id),
     );
   }
+
+  static toPrisma(user: User): PrismaUser {
+    return {
+      id: user.id.toString(),
+      cpf: user.cpf,
+      name: user.name,
+      password: user.password,
+      role: user.role,
+    };
+  }
 }

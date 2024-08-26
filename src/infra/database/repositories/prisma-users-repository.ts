@@ -29,14 +29,29 @@ export class PrismaUsersRepository implements UsersRepository {
   }
 
   async create(user: User): Promise<void> {
-    throw new Error('Method not implemented.');
+    const data = PrismaUserMapper.toPrisma(user);
+
+    await this.prisma.user.create({
+      data,
+    });
   }
 
   async save(user: User): Promise<void> {
-    throw new Error('Method not implemented.');
+    const data = PrismaUserMapper.toPrisma(user);
+
+    await this.prisma.user.update({
+      where: {
+        id: data.id,
+      },
+      data,
+    });
   }
 
   async delete(user: User): Promise<void> {
-    throw new Error('Method not implemented.');
+    await this.prisma.user.delete({
+      where: {
+        id: user.id.toString(),
+      },
+    });
   }
 }
