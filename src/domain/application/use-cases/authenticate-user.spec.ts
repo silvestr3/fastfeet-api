@@ -2,7 +2,7 @@ import { FakeHasher } from 'test/cryptography/fake-hasher';
 import { FakeUsersRepository } from 'test/repositories/fake-users-repository';
 import { AuthenticateUserUseCase } from './authenticate-user';
 import { FakeEncrypter } from 'test/cryptography/fake-encrypter';
-import { User } from 'src/domain/enterprise/entities/user';
+import { User } from '@/domain/enterprise/entities/user';
 import { InvalidCredentialsError } from './errors/invalid-credentials-error';
 
 let usersRepository: FakeUsersRepository;

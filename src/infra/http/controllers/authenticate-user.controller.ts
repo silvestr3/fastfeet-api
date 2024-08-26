@@ -7,9 +7,9 @@ import {
 } from '@nestjs/common';
 import { z } from 'zod';
 import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
-import { AuthenticateUserUseCase } from 'src/domain/application/use-cases/authenticate-user';
-import { UnauthorizedError } from 'src/domain/application/use-cases/errors/unauthorized-error';
-import { InvalidCredentialsError } from 'src/domain/application/use-cases/errors/invalid-credentials-error';
+import { AuthenticateUserUseCase } from '@/domain/application/use-cases/authenticate-user';
+import { UnauthorizedError } from '@/domain/application/use-cases/errors/unauthorized-error';
+import { InvalidCredentialsError } from '@/domain/application/use-cases/errors/invalid-credentials-error';
 
 const authenticateUserBodySchema = z.object({
   cpf: z.string().length(11),

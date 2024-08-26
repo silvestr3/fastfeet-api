@@ -1,9 +1,9 @@
 import { faker } from '@faker-js/faker';
-import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
+import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 import {
   Recipient,
   RecipientProps,
-} from 'src/domain/enterprise/entities/recipient';
+} from '@/domain/enterprise/entities/recipient';
 
 export function MakeRecipient(
   override: Partial<RecipientProps> = {},

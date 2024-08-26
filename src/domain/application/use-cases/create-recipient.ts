@@ -1,4 +1,4 @@
-import { Recipient } from 'src/domain/enterprise/entities/recipient';
+import { Recipient } from '@/domain/enterprise/entities/recipient';
 import { RecipientsRepository } from '../repositories/recipients-repository';
 import { UsersRepository } from '../repositories/users-repository';
 import { UnauthorizedError } from './errors/unauthorized-error';

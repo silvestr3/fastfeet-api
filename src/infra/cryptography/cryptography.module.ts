@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from '../auth/auth.module';
-import { Encrypter } from 'src/domain/application/cryptography/encrypter';
+import { Encrypter } from '@/domain/application/cryptography/encrypter';
 import { JwtEncrypterService } from './encrypter.service';
-import { HashGenerator } from 'src/domain/application/cryptography/hash-generator';
+import { HashGenerator } from '@/domain/application/cryptography/hash-generator';
 import { BcryptService } from './bcrypt.service';
-import { HashComparer } from 'src/domain/application/cryptography/hash-comparer';
+import { HashComparer } from '@/domain/application/cryptography/hash-comparer';
 
 @Module({
   imports: [AuthModule],

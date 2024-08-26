@@ -1,9 +1,9 @@
-import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
+import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 import { HashGenerator } from '../cryptography/hash-generator';
 import { UsersRepository } from '../repositories/users-repository';
 import { UserAlreadyExistsError } from './errors/user-already-exists-error';
 import { UnauthorizedError } from './errors/unauthorized-error';
-import { User } from 'src/domain/enterprise/entities/user';
+import { User } from '@/domain/enterprise/entities/user';
 
 interface CreateDeliveryUserUseCaseParams {
   userId: UniqueEntityId;

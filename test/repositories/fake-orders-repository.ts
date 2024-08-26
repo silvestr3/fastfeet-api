@@ -1,5 +1,5 @@
-import { OrdersRepository } from 'src/domain/application/repositories/orders-repository';
-import { Order } from 'src/domain/enterprise/entities/order';
+import { OrdersRepository } from '@/domain/application/repositories/orders-repository';
+import { Order } from '@/domain/enterprise/entities/order';
 
 export class FakeOrdersRepository implements OrdersRepository {
   public orders: Order[] = [];

@@ -1,5 +1,5 @@
-import { RecipientsRepository } from 'src/domain/application/repositories/recipients-repository';
-import { Recipient } from 'src/domain/enterprise/entities/recipient';
+import { RecipientsRepository } from '@/domain/application/repositories/recipients-repository';
+import { Recipient } from '@/domain/enterprise/entities/recipient';
 
 export class FakeRecipientsRepository implements RecipientsRepository {
   public recipients: Recipient[] = [];

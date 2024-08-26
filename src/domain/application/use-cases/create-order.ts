@@ -1,8 +1,8 @@
-import { Order } from 'src/domain/enterprise/entities/order';
+import { Order } from '@/domain/enterprise/entities/order';
 import { OrdersRepository } from '../repositories/orders-repository';
 import { UsersRepository } from '../repositories/users-repository';
 import { UnauthorizedError } from './errors/unauthorized-error';
-import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
+import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 
 interface CreateOrderUseCaseParams {
   executorId: string;

@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { UniqueEntityId } from 'src/core/entities/unique-entity-id';
-import { Order, OrderProps } from 'src/domain/enterprise/entities/order';
+import { UniqueEntityId } from '@/core/entities/unique-entity-id';
+import { Order, OrderProps } from '@/domain/enterprise/entities/order';
 
 export function MakeOrder(
   override: Partial<OrderProps> = {},

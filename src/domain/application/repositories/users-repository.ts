@@ -1,4 +1,4 @@
-import { User } from 'src/domain/enterprise/entities/user';
+import { User } from '@/domain/enterprise/entities/user';
 
 export abstract class UsersRepository {
   abstract findByCPF(cpf: string): Promise<User | null>;

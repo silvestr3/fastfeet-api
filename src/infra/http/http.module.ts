@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AuthenticateUserController } from './controllers/authenticate-user.controller';
-import { AuthenticateUserUseCase } from 'src/domain/application/use-cases/authenticate-user';
+import { AuthenticateUserUseCase } from '@/domain/application/use-cases/authenticate-user';
 import { DatabaseModule } from '../database/database.module';
 import { CryptographyModule } from '../cryptography/cryptography.module';
 
