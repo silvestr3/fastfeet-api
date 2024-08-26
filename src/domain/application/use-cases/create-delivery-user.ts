@@ -1,17 +1,17 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 import { HashGenerator } from '../cryptography/hash-generator';
 import { UsersRepository } from '../repositories/users-repository';
 import { UserAlreadyExistsError } from './errors/user-already-exists-error';
 import { UnauthorizedError } from './errors/unauthorized-error';
 import { User } from '@/domain/enterprise/entities/user';
+import { Injectable } from '@nestjs/common';
 
 interface CreateDeliveryUserUseCaseParams {
-  userId: UniqueEntityId;
+  executorId: string;
   name: string;
   cpf: string;
   password: string;
 }
-
+@Injectable()
 export class CreateDeliveryUserUseCase {
   constructor(
     private usersRepository: UsersRepository,
@@ -19,14 +19,16 @@ export class CreateDeliveryUserUseCase {
   ) {}
 
   async execute({
-    userId,
+    executorId,
     name,
     cpf,
     password,
   }: CreateDeliveryUserUseCaseParams) {
-    const executerUser = await this.usersRepository.findById(userId.toString());
+    const executerUser = await this.usersRepository.findById(
+      executorId.toString(),
+    );
 
-    if (executerUser.role !== 'ADMIN') {
+    if (executerUser.role !== 'ADMIN' || !executerUser) {
       throw new UnauthorizedError();
     }
 
@@ -43,10 +45,10 @@ export class CreateDeliveryUserUseCase {
       role: 'DELIVERY',
     });
 
-    const user = this.usersRepository.create(newUser);
+    await this.usersRepository.create(newUser);
 
     return {
-      user,
+      user: newUser,
     };
   }
 }

@@ -7,6 +7,7 @@ import { JwtStrategy } from './jwt.strategy';
 @Module({
   imports: [
     PassportModule,
+    EnvModule,
     JwtModule.registerAsync({
       global: true,
       imports: [EnvModule],

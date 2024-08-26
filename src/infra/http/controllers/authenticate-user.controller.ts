@@ -8,7 +8,6 @@ import {
 import { z } from 'zod';
 import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
 import { AuthenticateUserUseCase } from '@/domain/application/use-cases/authenticate-user';
-import { UnauthorizedError } from '@/domain/application/use-cases/errors/unauthorized-error';
 import { InvalidCredentialsError } from '@/domain/application/use-cases/errors/invalid-credentials-error';
 
 const authenticateUserBodySchema = z.object({

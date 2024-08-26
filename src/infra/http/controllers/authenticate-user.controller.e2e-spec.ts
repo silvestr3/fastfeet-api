@@ -3,8 +3,6 @@ import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { UserFactory } from 'test/factories/fake-users-factory';
 import request from 'supertest';
-import { PrismaService } from '@/infra/database/prisma.service';
-import { BcryptService } from '@/infra/cryptography/bcrypt.service';
 import { CryptographyModule } from '@/infra/cryptography/cryptography.module';
 import { DatabaseModule } from '@/infra/database/database.module';
 
