@@ -16,6 +16,7 @@ datasource db {
 model Recipient {
   id        String  @id @default(uuid())
   name      String
+  address   String
   latitude  Decimal
   longitude Decimal
   orders    Order[]
