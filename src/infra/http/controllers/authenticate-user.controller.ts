@@ -1,7 +1,15 @@
-import { Body, Controller, Post, UnauthorizedException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Post,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { z } from 'zod';
 import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
 import { AuthenticateUserUseCase } from 'src/domain/application/use-cases/authenticate-user';
+import { UnauthorizedError } from 'src/domain/application/use-cases/errors/unauthorized-error';
+import { InvalidCredentialsError } from 'src/domain/application/use-cases/errors/invalid-credentials-error';
 
 const authenticateUserBodySchema = z.object({
   cpf: z.string().length(11),
@@ -29,7 +37,11 @@ export class AuthenticateUserController {
         auth_token: token,
       };
     } catch (err) {
-      throw new UnauthorizedException(err.message);
+      if (err instanceof InvalidCredentialsError) {
+        throw new UnauthorizedException(err.message);
+      }
+
+      throw new BadRequestException();
     }
   }
 }
