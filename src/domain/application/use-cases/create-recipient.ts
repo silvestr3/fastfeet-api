@@ -2,6 +2,7 @@ import { Recipient } from '@/domain/enterprise/entities/recipient';
 import { RecipientsRepository } from '../repositories/recipients-repository';
 import { UsersRepository } from '../repositories/users-repository';
 import { UnauthorizedError } from './errors/unauthorized-error';
+import { Injectable } from '@nestjs/common';
 
 interface CreateRecipientUseCaseParams {
   executorId: string;
@@ -10,7 +11,7 @@ interface CreateRecipientUseCaseParams {
   latitude: number;
   longitude: number;
 }
-
+@Injectable()
 export class CreateRecipientUseCase {
   constructor(
     private usersRepository: UsersRepository,
